@@ -9,11 +9,14 @@ let rejectedCount = document.getElementById("rejectedCount");
 function updateCounts() {
     let totalJobs = document.getElementById("allJobCard").children.length;
     totalJobCount.innerHTML = totalJobs;
-    console.log(totalJobs);
+
+    interviewCount.innerHTML = interviewCountArray.length;
+    rejectedCount.innerHTML = rejectedCountArray.length;
+    console.log(interviewCountArray.length);
 
 }
 
-updateCounts();
+
 
 
 
@@ -41,3 +44,96 @@ function toggleJobCards(id) {
         allJobCardbtn.classList.add("btn-primary");
     }
 }
+
+
+document.getElementById("allJobCard").addEventListener("click", function (event) {
+    const parentNode = event.target.parentNode.parentNode;
+
+    console.log(parentNode);
+
+    if (event.target.classList.contains("interviewBtnBadge")) {
+
+        const cardTitle = parentNode.querySelector(".card-title").innerText;
+        const jobDetails = parentNode.querySelector(".job-details").innerText;
+        const jobRequirement = parentNode.querySelector(".job-requirement").innerText;
+        const jobDescription = parentNode.querySelector(".job-description").innerText;
+        let status = parentNode.querySelector(".badge-status").innerText;
+        
+        status = "INTERVIEW";
+        parentNode.querySelector(".badge-status").innerText = status;
+        
+        const filteredCard = {
+            cardTitle,
+            jobDetails,
+            jobRequirement,
+            jobDescription,
+            status
+        };
+
+        // Check if the title already exists in the array
+        const isDuplicate = interviewCountArray.some(item => item.cardTitle === filteredCard.cardTitle);
+
+        if (isDuplicate) {
+            console.log("Card already exists in the array.");
+        } else if (rejectedCountArray.some(item => item.cardTitle === filteredCard.cardTitle)) {
+            rejectedCountArray.pop(filteredCard);
+            interviewCountArray.push(filteredCard);
+            updateCounts();
+        }
+
+        else {
+            interviewCountArray.push(filteredCard);
+            updateCounts();
+        }
+
+    }
+    else if (event.target.classList.contains("rejectedBtnBadge")) {
+
+        const cardTitle = parentNode.querySelector(".card-title").innerText;
+        const jobDetails = parentNode.querySelector(".job-details").innerText;
+        const jobRequirement = parentNode.querySelector(".job-requirement").innerText;
+        const jobDescription = parentNode.querySelector(".job-description").innerText;
+        let status = parentNode.querySelector(".badge-status").innerText;
+
+        status = "REJECTED";
+        parentNode.querySelector(".badge-status").innerText = status;
+        const filteredCard = {
+            cardTitle,
+            jobDetails,
+            jobRequirement,
+            jobDescription,
+            status
+        };
+
+        // Check if the title already exists in the array
+        const isDuplicate = rejectedCountArray.some(item => item.cardTitle === filteredCard.cardTitle);
+
+        if (isDuplicate) {
+            console.log("Card already exists in the array.");
+        } else if (interviewCountArray.some(item => item.cardTitle === filteredCard.cardTitle)) {
+            interviewCountArray.pop(filteredCard);
+            rejectedCountArray.push(filteredCard);
+            updateCounts();
+        } else {
+            rejectedCountArray.push(filteredCard);
+            updateCounts();
+        }
+    }
+
+
+    // if (parentNode.classList.contains("interviewBtnBadge")) {
+    //     const div = document.createElement("div");
+    //     div.classList.add("card-holder", "space-y-5");
+    //     div.innerHTML = `
+    //     `;
+    //     document.querySelector(".filterSection").appendChild(div);          
+    // } else if (parentNode.classList.contains("not-applied")) {
+
+    // }
+});
+
+function renderFilteredCards() {
+
+}
+
+updateCounts();
