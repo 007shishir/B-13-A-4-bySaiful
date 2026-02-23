@@ -22,19 +22,19 @@
             <div class="card bg-base-100 w-96 shadow-sm">
                 <div class="card-body">
                     <h2 class="card-title">Total</h2>
-                    <p>0</p>
+                    <p id="totalJobCount">0</p>
                 </div>
             </div>
             <div class="card bg-base-100 w-96 shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title">Total</h2>
-                    <p>0</p>
+                    <h2 class="card-title">Interview</h2>
+                    <p id="interviewCount">0</p>
                 </div>
             </div>
             <div class="card bg-base-100 w-96 shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title">Total</h2>
-                    <p>0</p>
+                    <h2 class="card-title">Rejected</h2>
+                    <p id="rejectedCount">0</p>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
 
     <hr class="my-5 border-gray-300">
 
-    <main class="w-11/12 mx-auto">
+    <main id="allJobCard" class="w-11/12 mx-auto">
 
         <!-- This is the body top section with three button filter  -->
 
@@ -242,6 +242,8 @@
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
