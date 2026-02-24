@@ -181,4 +181,27 @@ function renderFilteredCards(filterType) {
         });
     }
 }
+
+// Select the container holding all the cards
+const cardHolder = document.getElementById('cardHolder');
+
+cardHolder.addEventListener('click', function (event) {
+    // 1. Check if the clicked element (or its parent) is the delete button
+    // .closest() is great because it catches clicks on the <i> icon too
+    const deleteBtn = event.target.closest('.deleteBtnBadge');
+
+    if (deleteBtn) {
+        // 2. Find the card associated with this specific button
+        const card = deleteBtn.closest('.card');
+
+        // 3. Remove the card from the DOM
+        if (card) {
+            card.remove();
+            
+            updateCounts();
+        }
+    }
+});
+
+
 updateCounts();
