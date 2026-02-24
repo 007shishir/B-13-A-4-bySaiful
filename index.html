@@ -43,50 +43,104 @@
 
     <hr class="my-5 border-gray-300">
 
-    <main   class="w-11/12 mx-auto">
+    <main id="mainContainer" class="w-11/12 mx-auto">
 
         <!-- This is the body top section with three button filter  -->
 
         <h1 class="text-3xl font-bold mb-5">Available Jobs</h1>
         <div class="mb-5">
-            <button onclick="toggleJobCards('allJobCardbtn')" id="allJobCardbtn" class="btn btn-primary px-10">All</button>
-            <button onclick="toggleJobCards('interviewJobCardbtn')" id="interviewJobCardbtn" class="btn btn-primary px-10">Interview</button>
-            <button onclick="toggleJobCards('rejectedJobCardbtn')" id="rejectedJobCardbtn" class="btn btn-primary px-10">Rejected</button>
+            <button onclick="toggleJobCards('allJobCardbtn')" id="allJobCardbtn"
+                class="btn btn-primary px-10">All</button>
+            <button onclick="toggleJobCards('interviewJobCardbtn')" id="interviewJobCardbtn"
+                class="btn btn-primary px-10">Interview</button>
+            <button onclick="toggleJobCards('rejectedJobCardbtn')" id="rejectedJobCardbtn"
+                class="btn btn-primary px-10">Rejected</button>
         </div>
 
-        <section class="filterSection">
+        <section id="filterSection" class="space-y-5">
 
         </section>
 
         <section id="allJobCard">
-            <div class="card-holder space-y-5">
-            <div class="card bg-base-100 shadow-sm">
-                <div class="card-body">
+            <div id="cardHolder" class="card-holder space-y-5">
+                <div class="card bg-base-100 shadow-sm">
+                    <div class="card-body">
 
-                    <div>
-                        <h2 class="card-title">
-                            Mobile App Developer
-                        </h2>
-                        <p class="job-details">React native developer</p>
+                        <div>
+                            <h2 class="card-title">
+                                Mobile App Developer
+                            </h2>
+                            <p class="job-details">React native developer</p>
 
+                        </div>
+
+                        <p class="job-requirement">Remote - Full-time - $130,000 - $175,000</p>
+
+                        <div class="badge-status badge badge-primary badge-outline">NOT APPLIED</div>
+
+                        <p class="job-description">Build cross-platform mobile applications using React Native and Expo.
+                        </p>
+
+                        <div class="card-actions mt-5">
+                            <button class="interviewBtnBadge badge badge-outline text-success">Interview</button>
+                            <button class="rejectedBtnBadge badge badge-outline text-error">Rejected</button>
+                        </div>
                     </div>
+                </div>
 
-                    <p class="job-requirement">Remote - Full-time - $130,000 - $175,000</p>
+                <div class="card bg-base-100 shadow-sm">
+                    <div class="card-body">
 
-                    <div class="badge-status badge badge-primary badge-outline">NOT APPLIED</div>
+                        <div>
+                            <h2 class="card-title">
+                                Mobile App Developer 2
+                            </h2>
+                            <p class="job-details">React native developer</p>
 
-                    <p class="job-description">Build cross-platform mobile applications using React Native and Expo.</p>
+                        </div>
 
-                    <div class="card-actions mt-5">
-                        <button class="interviewBtnBadge badge badge-outline text-success">Interview</button>
-                        <button class="rejectedBtnBadge badge badge-outline text-error">Rejected</button>
+                        <p class="job-requirement">Remote - Full-time - $130,000 - $175,000</p>
+
+                        <div class="badge-status badge badge-primary badge-outline">NOT APPLIED</div>
+
+                        <p class="job-description">Build cross-platform mobile applications using React Native and Expo.
+                        </p>
+
+                        <div class="card-actions mt-5">
+                            <button class="interviewBtnBadge badge badge-outline text-success">Interview</button>
+                            <button class="rejectedBtnBadge badge badge-outline text-error">Rejected</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-sm">
+                    <div class="card-body">
+
+                        <div>
+                            <h2 class="card-title">
+                                Mobile App Developer 3
+                            </h2>
+                            <p class="job-details">React native developer</p>
+
+                        </div>
+
+                        <p class="job-requirement">Remote - Full-time - $130,000 - $175,000</p>
+
+                        <div class="badge-status badge badge-primary badge-outline">NOT APPLIED</div>
+
+                        <p class="job-description">Build cross-platform mobile applications using React Native and Expo.
+                        </p>
+
+                        <div class="card-actions mt-5">
+                            <button class="interviewBtnBadge badge badge-outline text-success">Interview</button>
+                            <button class="rejectedBtnBadge badge badge-outline text-error">Rejected</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
 
-        
+
     </main>
 
     <script src="script.js"></script>
